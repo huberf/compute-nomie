@@ -1,0 +1,4 @@
+{
+  "url": "https://MY_SERVER.COM:5984",
+  "username": "MY_COUCH_USERNAME"
+}
