@@ -43,6 +43,11 @@ def parse_request():
     # Retreive actual values
     label = get_parameter(request, 'label')
     start = get_parameter(request, 'start')
+    inputEnd = get_parameter(request, 'end')
+    if inputEnd:
+        end = inputEnd
+    else:
+        end = None
     if includes_required([label, start]):
         data = myNomie.count(label, start, end, cached)
         if not data['count'] == None:

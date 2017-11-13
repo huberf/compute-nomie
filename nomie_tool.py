@@ -26,14 +26,15 @@ class NomieComp:
         else:
             events = json.loads(open('event_cache.json').read())
 
-	instances = []
-	for i in events:
-	    if i['name'] == label:
-		instances += [i]
+        instances = []
+        for i in events:
+            if i['name'] == label:
+                instances += [i]
 
         count = 0
-	for i in instances:
-	    if int(i['time']) > int(start):
-		count += 1
+        for i in instances:
+            if int(i['time']) > int(start):
+                if end == None or int(i['time']) < int(end):
+                    count += 1
 
         return { 'count': count }
